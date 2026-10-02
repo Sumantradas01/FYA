@@ -1,0 +1,95 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Environment / Secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.crt
+secrets/
+credentials/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary
+tmp/
+temp/
+cache/
+*.tmp
+repositories/
+cloned_repos/
+repo_cache/
+
+# Security Scanner Results
+scan-results/
+scanner-results/
+reports/generated/
+*.sarif
+*.sarif.json
+*.scan.json
+semgrep-results/
+codeql-results/
+gitleaks-results/
+zap-results/
+joern-results/
+
+# Logs
+logs/
+*.log
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+postgres-data/
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Docker
+docker/.docker/
+docker/data/
+
+# Generated Reports
+generated_reports/
+output/
+*.pdf
+*.html
+
+# Analysis Data
+analysis_data/
+vulnerability_cache/
+dependency_cache/
