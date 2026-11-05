@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Fired during plugin activation
+ *
+ * @link       https://github.com/faiyazalam
+ * @since      1.4.1
+ *
+ * @package    User_Login_History
+ * @subpackage User_Login_History/includes
+ * @author     Er Faiyaz Alam
+ */
+class User_Login_History_Error_Handler {
+
+    const ULH_ERROR_LOG_FILE = WP_CONTENT_DIR . '/user-login-history.log';
+
+    public static function error_log($message = '') {
+        ini_set('error_log', self::ULH_ERROR_LOG_FILE);
+        error_log("$message at line:" . __LINE__ . " file:" . __FILE__);
+    }
+
+}

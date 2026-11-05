@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# checkout the master branch to $GL_ADMINDIR
+# (the GL_ADMINDIR env var would have been set by gl-auth-command)
+GIT_WORK_TREE=$GL_ADMINDIR git checkout -f master -- \
+    `git ls-tree master | cut -f2 | perl -lne 'print unless /^(src|hooks)$/'`
+
+od=$PWD
+cd $GL_ADMINDIR
+$GL_BINDIR/gl-compile-conf
+
+cd $od
+
+if [ -f hooks/post-update.secondary ] || [ -L hooks/post-update.secondary ]
+then
+    exec hooks/post-update.secondary "$@"
+fi
